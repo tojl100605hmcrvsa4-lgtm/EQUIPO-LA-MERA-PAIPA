@@ -9,13 +9,8 @@ Django: Framework para desarrollar el sistema.
 Python: Lenguaje de programación utilizado.
 Visual Studio Code: Editor de código para trabajar en el proyecto.
 
-Autores y desarrolladores:
-    +Camila
-    +Irving
-    +leonel
-    +Luis Yael
-    +Luis Daniel
-
+los autores y desarrolladores de este repositorio son :Camila Scarlet Vera Resendiz,Irving Aviles Jasso,Leonel Prieto Herrera,Luis Yael Lara Arzate,Luis Daniel Torres Javier
+    
 Nombre del equipo
 La_Mera_Paipa
 
