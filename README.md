@@ -10,11 +10,11 @@ Python: Lenguaje de programación utilizado.
 Visual Studio Code: Editor de código para trabajar en el proyecto.
 
 Autores y desarrolladores:
-    +Camila
-    +Irving
-    +leonel
-    +Luis Yael
-    +Luis Daniel
+    Camila Vera
+    Irving Jasso
+    leonel Prieto
+    Luis Yael Lara
+    Luis Daniel Torres 
 
 Nombre del equipo
 La_Mera_Paipa
