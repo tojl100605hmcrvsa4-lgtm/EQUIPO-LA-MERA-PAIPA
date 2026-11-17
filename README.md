@@ -11,7 +11,7 @@ Visual Studio Code: Editor de código para trabajar en el proyecto.
 
 Autores y desarrolladores:
     Camila Vera
-    Irving Jasso
+    Irving Aviles
     leonel Prieto
     Luis Yael Lara
     Luis Daniel Torres 
@@ -21,5 +21,7 @@ La_Mera_Paipa
 
 Nombre del repositorio
 equipo_la_mera_paipa_sistema_SIAA
+
+Hola caras de papois
 
 
