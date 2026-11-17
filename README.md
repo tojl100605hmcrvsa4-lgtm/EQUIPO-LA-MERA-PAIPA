@@ -24,3 +24,4 @@ equipo_la_mera_paipa_sistema_SIAA
 
 Hola caras de popos
 
+todos colaboramos en este projecto, pero tu vimos muchos errores y complicaciones 
