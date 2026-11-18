@@ -24,4 +24,7 @@ equipo_la_mera_paipa_sistema_SIAA
 
 Hola caras de popos
 
-todos colaboramos en este projecto, pero tu vimos muchos errores y complicaciones 
+## 💻 Colaboración y Retos del Equipo
+Todos los integrantes colaboramos activamente en este proyecto Durante el desarrollo tuvimos varios errores y complicaciones
+técnicas (como conflictos al sincronizar cambios en GitHub, ajustes en las migraciones de Django y depuración de códigopero
+trabajando juntos y apoyándonos logramos resolver cada obstáculo para sacar el sistema adelante.
