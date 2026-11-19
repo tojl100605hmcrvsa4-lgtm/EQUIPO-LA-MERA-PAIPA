@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema SIAA - Reportes</title>
+</head>
+<body>
+    <h1>Historial de Reportes - Sistema SIAA</h1>
+    <a href="{% url 'crear_reporte' %}">+ Registrar Nuevo Reporte</a>
+    <hr>
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Fecha</th>
+            <th>Alumno</th>
+            <th>Grupo</th>
+            <th>Tipo</th>
+            <th>Descripción</th>
+            <th>Registrado por</th>
+        </tr>
+        {% for reporte in reportes %}
+        <tr>
+            <td>{{ reporte.fecha }}</td>
+            <td>{{ reporte.alumno.nombre_completo }}</td>
+            <td>{{ reporte.alumno.grupo }}</td>
+            <td>{{ reporte.get_tipo_display }}</td>
+            <td>{{ reporte.descripcion }}</td>
+            <td>{{ reporte.registrado_por }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="6">No hay reportes registrados todavía.</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
