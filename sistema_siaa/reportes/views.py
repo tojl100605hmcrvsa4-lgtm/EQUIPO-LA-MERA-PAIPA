@@ -101,3 +101,10 @@ def eliminar_reporte(request, reporte_id):
         reporte.delete()
         messages.success(request, 'Reporte eliminado.')
     return redirect('detalle_alumno', alumno_id=alumno_id)
+
+def detalle_alumno(request, alumno_id):
+    alumno = Alumno.objects.get(id=alumno_id)
+
+    return render(request, 'reportes/detalle_alumno.html', {
+        'alumno': alumno
+    })
