@@ -16,6 +16,7 @@
             <th>Tipo</th>
             <th>Descripción</th>
             <th>Registrado por</th>
+            <th>Acciones</th>
         </tr>
         {% for reporte in reportes %}
         <tr>
@@ -25,10 +26,18 @@
             <td>{{ reporte.get_tipo_display }}</td>
             <td>{{ reporte.descripcion }}</td>
             <td>{{ reporte.registrado_por }}</td>
+            <td>
+                <form action="{% url 'eliminar_reporte' reporte.id %}" method="POST" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" onclick="return confirm('¿Seguro que deseas eliminar este reporte?');">
+                        Eliminar
+                    </button>
+                </form>
+            </td>
         </tr>
         {% empty %}
         <tr>
-            <td colspan="6">No hay reportes registrados todavía.</td>
+            <td colspan="7">No hay reportes registrados todavía.</td>
         </tr>
         {% endfor %}
     </table>

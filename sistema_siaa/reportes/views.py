@@ -107,4 +107,11 @@ def detalle_alumno(request, alumno_id):
 
     return render(request, 'reportes/detalle_alumno.html', {
         'alumno': alumno
-    })
+        })
+        
+def eliminar_reporte(request, id):
+    reporte = get_object_or_404(Reporte, id=id)
+    if request.method == 'POST':
+        reporte.delete()
+    return redirect('lista_reportes')
+    
