@@ -2,13 +2,58 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Sistema SIAA - Reportes</title>
+    <title>Historial de Reportes - Sistema SIAA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f5;
+            text-align: center;
+            margin: 30px;
+        }
+        h1 {
+            color: #1a365d;
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: white;
+            width: 85%;
+        }
+        th {
+            background-color: #2b6cb0;
+            color: white;
+            padding: 10px;
+        }
+        td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .boton {
+            background-color: #2b6cb0;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .boton-rojo {
+            background-color: #c53030;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
+
     <h1>Historial de Reportes - Sistema SIAA</h1>
-    <a href="{% url 'crear_reporte' %}">+ Registrar Nuevo Reporte</a>
-    <hr>
-    <table border="1" cellpadding="8">
+
+    <a href="{% url 'crear_reporte' %}" class="boton">+ Registrar Nuevo Reporte</a>
+
+    <table>
         <tr>
             <th>Fecha</th>
             <th>Alumno</th>
@@ -20,26 +65,21 @@
         </tr>
         {% for reporte in reportes %}
         <tr>
-            <td>{{ reporte.fecha }}</td>
+            <td>{{ reporte.fecha|date:"M. d, Y" }}</td>
             <td>{{ reporte.alumno.nombre_completo }}</td>
             <td>{{ reporte.alumno.grupo }}</td>
-            <td>{{ reporte.get_tipo_display }}</td>
+            <td>{{ reporte.get_tipo_display|default:reporte.tipo }}</td>
             <td>{{ reporte.descripcion }}</td>
             <td>{{ reporte.registrado_por }}</td>
             <td>
-                <form action="{% url 'eliminar_reporte' reporte.id %}" method="POST" style="display:inline;">
+                <form action="{% url 'eliminar_reporte' reporte.id %}" method="POST">
                     {% csrf_token %}
-                    <button type="submit" onclick="return confirm('¿Seguro que deseas eliminar este reporte?');">
-                        Eliminar
-                    </button>
+                    <button type="submit" class="boton-rojo">Eliminar</button>
                 </form>
             </td>
         </tr>
-        {% empty %}
-        <tr>
-            <td colspan="7">No hay reportes registrados todavía.</td>
-        </tr>
         {% endfor %}
     </table>
+
 </body>
 </html>

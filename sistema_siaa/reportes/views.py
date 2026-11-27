@@ -94,24 +94,8 @@ def crear_reporte(request, alumno_id=None):
     })
 
 
-def eliminar_reporte(request, reporte_id):
-    reporte = get_object_or_404(Reporte, id=reporte_id)
-    alumno_id = reporte.alumno.id
-    if request.method == 'POST':
-        reporte.delete()
-        messages.success(request, 'Reporte eliminado.')
-    return redirect('detalle_alumno', alumno_id=alumno_id)
-
-def detalle_alumno(request, alumno_id):
-    alumno = Alumno.objects.get(id=alumno_id)
-
-    return render(request, 'reportes/detalle_alumno.html', {
-        'alumno': alumno
-        })
-        
 def eliminar_reporte(request, id):
     reporte = get_object_or_404(Reporte, id=id)
     if request.method == 'POST':
         reporte.delete()
     return redirect('lista_reportes')
-    
